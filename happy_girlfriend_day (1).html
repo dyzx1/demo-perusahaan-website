@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Girlfriend Day Sayangg 💘</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: black;
+      color: white;
+      overflow: hidden;
+    }
+    .container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+    }
+    .container.active {
+      display: flex;
+      flex-direction: column;
+    }
+    .text-box {
+      background: pink;
+      color: black;
+      padding: 20px;
+      border-radius: 15px;
+      border: none;
+      max-width: 90%;
+      white-space: pre-line;
+    }
+    button, .next-indicator, .back-indicator {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      background-color: pink;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .next-indicator {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+    .back-indicator {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+    .love-effect .heart {
+      width: 20px;
+      height: 20px;
+      background: pink;
+      position: absolute;
+      animation: floatUp 4s linear infinite;
+      transform: rotate(45deg);
+    }
+    .love-effect .heart::before,
+    .love-effect .heart::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: pink;
+      position: absolute;
+      border-radius: 50%;
+    }
+    .love-effect .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .love-effect .heart::after {
+      top: 0;
+      left: -10px;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+    .text-box p {
+      white-space: pre-line;
+      font-weight: 500;
+    }
+    #slideQuestion h2 {
+      font-size: 2.5em;
+    }
+    .choice-button {
+      display: block;
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin: 10px auto 0;
+      border: 2px solid pink;
+    }
+    .slide-image {
+      display: none;
+    }
+    .black-box-button {
+      display: block;
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 2px solid pink;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="love-effect" id="loveEffect"></div>
+
+  <div class="container active" id="slideWelcome">
+    <div class="text-box">
+      <h1 style="font-size: 2.5em; color: black;">Happy Girlfriend Day Babe 💝</h1>
+      <p><b>ini ada sesuatu buat kamu, pencet mulai yaa! 🥰</b></p>
+      <div class="black-box-button" onclick="startExperience()">Mulai 💕</div>
+    </div>
+  </div>
+
+  <div class="container" id="slideStart">
+    <div class="text-box">
+      <h2 style="font-size: 2em;">Tapi jawab dulu, Do u love me? </h2>
+      <div>
+        <div class="black-box-button" onclick="showSlideById('slideYes')">Of course</div>
+        <div class="black-box-button" onclick="showSlideById('slideNo')">Enggaa</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="slideYes">
+    <div class="text-box">
+      <p><b>Yeayyy! Mwahh karena kamu jawab iyaa, hadiahnya cium, peluk, dan pangku! 😚💞
+
+Tapi selesain dulu sampe akhir yaa hehe</b></p>
+    </div>
+    <div class="next-indicator" onclick="showSlideById('slide1')">Next ⇨</div>
+    <div class="back-indicator" onclick="showSlideById('slideStart')">⇦ Balik</div>
+  </div>
+
+  <div class="container" id="slideNo">
+    <div class="text-box">
+      <p><b>Gak bisaa wleee 😝
+
+Kamu harus sayang akuuu~ balik sana pencet iyaa 😤💔</b></p>
+    </div>
+    <div class="back-indicator" onclick="showSlideById('slideStart')">⇦ Balik</div>
+  </div>
+
+  <div class="container" id="slide1">
+    <div class="text-box">
+      <p><b>Haii sayang,
+happy girlfriend day yaa cantik,
+akuu cuma mau ngucapin kalo aku bener-bener sayang sama kamu,
+aku bener-bener takut kehilangan kamu,
+aku sayang kamu lebih dari yang kamu tau,
+i'm so proud of u,
+segala apapun yang kamu lakuin aku bangga sama kamu,
+dan aku bakal selalu ada disini buat kamu sayang,
+nemenin semua proses kamu,
+aku harap kamu jugaa yaa</b></p>
+    </div>
+    <div class="next-indicator" onclick="showSlideById('slide2')">Next ⇨</div>
+    <div class="back-indicator" onclick="showSlideById('slideYes')">⇦ Back</div>
+  </div>
+
+  <div class="container" id="slide2">
+    <div class="text-box">
+      <p><b>Maaf yaa buat semua kesalahan yang pernah aku buat,
+entah itu ngeboongin kamu atau apapun,
+akuu nyesel dan ingkar janji padahal akuu gamau ngeliat kamu ngeluarin air mata karna perbuatan aku,
+tapi aku malah ngelakuin ituu,
+maaf yaa sayang</b></p>
+    </div>
+    <div class="next-indicator" onclick="showSlideById('slide3')">Next ⇨</div>
+    <div class="back-indicator" onclick="showSlideById('slide1')">⇦ Back</div>
+  </div>
+
+  <div class="container" id="slide3">
+    <div class="text-box">
+      <p><b>Makasih jugaa yaa buat semuanya,
+ur my first experience,
+ur the best for me,
+akuu bener-bener bersyukur bisa kenal sama perempuan cantik bernama Joiceline Christian,
+pokoknya akuu banyak terima kasih dan maaf samaa kamuu</b></p>
+    </div>
+    <div class="next-indicator" onclick="showSlideById('slide4')">Next ⇨</div>
+    <div class="back-indicator" onclick="showSlideById('slide2')">⇦ Back</div>
+  </div>
+
+  <div class="container" id="slide4">
+    <div class="text-box">
+      <p><b>Semoga kitaa selalu sama-sama teruss yaa, aminnn
+Love u so much babe, mwahhhh
+Please don't go anymore, still here</b></p>
+    </div>
+    <div class="back-indicator" onclick="showSlideById('slide3')">⇦ Back</div>
+    <div class="next-indicator" onclick="showSlideById('slideWelcome')">⇦ Ulang</div>
+  </div>
+
+  <audio id="bgm" src="lagu.mp3" loop></audio>
+
+  <script>
+    const slideIds = [
+      'slideWelcome', 'slideStart', 'slideYes', 'slideNo', 'slide1', 'slide2', 'slide3', 'slide4'
+    ];
+    const slides = slideIds.map(id => document.getElementById(id));
+    const audio = document.getElementById('bgm');
+    const loveContainer = document.getElementById('loveEffect');
+
+    function showSlideById(id) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      const target = document.getElementById(id);
+      if (target) target.classList.add('active');
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = '100vh';
+      loveContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }
+
+    function startExperience() {
+      showSlideById('slideStart');
+      audio.play().catch(() => {
+        // Autoplay might be blocked
+        console.log('Audio autoplay blocked');
+      });
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
